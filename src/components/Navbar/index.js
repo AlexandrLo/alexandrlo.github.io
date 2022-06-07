@@ -1,40 +1,78 @@
 import React from "react";
 
+import { BsCloudDownloadFill } from "react-icons/bs";
 import { Link as RouterLink } from "react-router-dom";
 import {
+  Button,
   Container,
   HStack,
+  Heading,
   Link,
+  Show,
+  Text,
+  Tooltip,
+  VStack,
   VisuallyHidden,
   chakra,
+  useColorMode,
   useColorModeValue,
 } from "@chakra-ui/react";
 
-import ColorModeToggle from "components/ColorModeToggle";
-import Logo from "assets/react-logo.svg";
+import Contacts from "./Contacts";
+import LogoBlack from "assets/logo/logo-black.svg";
+import LogoWhite from "assets/logo/logo-white.svg";
+import portfolioData from "assets/json/portfolio.json";
 
 function Navbar() {
-  const bg = useColorModeValue("gray.50", "gray.900");
-  return (
-    <chakra.header bg={bg} w="100%">
-      <Container maxW="container.md" py={5} align="center">
-        <HStack justify="space-between">
-          <HStack spacing={10}>
-            <Link as={RouterLink} to="/">
-              <HStack>
-                <Logo height="2rem" />
-                <VisuallyHidden>Logo</VisuallyHidden>
-              </HStack>
-            </Link>
+  const { colorMode } = useColorMode();
+  const bg = useColorModeValue("whiteAlpha.800", "blackAlpha.800");
 
-            <Link as={RouterLink} to="/">
-              Home
-            </Link>
-            <Link as={RouterLink} to="/about">
-              About
-            </Link>
-          </HStack>
-          <ColorModeToggle />
+  return (
+    <chakra.header
+      borderBottomWidth="2px"
+      position="sticky"
+      top="0"
+      bg={bg}
+      backdropFilter="auto"
+      backdropBlur={"8px"}
+      zIndex={2}
+    >
+      <Container
+        py={{ base: "1rem", md: "1.5rem" }}
+        px={{ base: "1rem", md: "1.5rem" }}
+        align="center"
+      >
+        <HStack justify="space-between">
+          {/* Left Links */}
+          <Link as={RouterLink} to="/">
+            <HStack spacing="1rem">
+              {colorMode === "light" && <LogoBlack />}
+              {colorMode === "dark" && <LogoWhite />}
+              <VisuallyHidden>Logo</VisuallyHidden>
+              <VStack align="start" textAlign="start" spacing={0}>
+                <Heading as="h3" size="h3">
+                  Ломаченко Александр
+                </Heading>
+                <Text>Frontend React Developer</Text>
+              </VStack>
+            </HStack>
+          </Link>
+          {/* Right Links */}
+          <Show above="md">
+            <HStack>
+              <Tooltip label="Скачать CV" hasArrow>
+                <Button
+                  as="a"
+                  href={portfolioData.cv}
+                  variant="alpha"
+                  size="lg"
+                >
+                  <BsCloudDownloadFill />
+                </Button>
+              </Tooltip>
+              <Contacts />
+            </HStack>
+          </Show>
         </HStack>
       </Container>
     </chakra.header>
