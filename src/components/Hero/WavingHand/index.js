@@ -12,7 +12,6 @@ function WavingHand() {
 
   const wave = () => {
     api.start({
-      from: { rotateZ: 0 },
       to: [
         { rotateZ: 20 },
         { rotateZ: -15 },
