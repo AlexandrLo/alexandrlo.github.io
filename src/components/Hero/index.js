@@ -12,6 +12,7 @@ import {
 
 import IllustrationDark from "assets/illustration/Illustration-dark.svg";
 import IllustrationLight from "assets/illustration/Illustration-dark.svg";
+import portfolioData from "assets/json/portfolio.json";
 
 function Hero() {
   const { colorMode } = useColorMode();
@@ -20,11 +21,8 @@ function Hero() {
     <Container px={{ base: "1rem", md: "1.5rem" }} py="4rem">
       <HStack justify="space-between">
         <VStack align="start" maxW="30rem" spacing="1rem">
-          <Heading>Привет! 👋</Heading>
-          <Text variant="lead">
-            Я — frontend разработчик, который любит делать красивые, современные
-            веб приложения и учиться новому.
-          </Text>
+          <Heading>{portfolioData.hero.heading}</Heading>
+          <Text variant="lead">{portfolioData.hero.lead}</Text>
         </VStack>
         <Show above="md">
           {colorMode === "light" && <IllustrationLight />}

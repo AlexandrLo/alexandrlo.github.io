@@ -1,5 +1,13 @@
 {
   "cv": "https://www.dropbox.com/s/6bsmpeehfu2cbek/CV.pdf?dl=0",
+  "navbar": {
+    "heading": "Ломаченко Александр",
+    "lead": "Frontend React Developer"
+  },
+  "hero": {
+    "heading": "Привет! 👋",
+    "lead": "Я — frontend разработчик, который любит делать красивые, современные веб приложения и учиться новому."
+  },
   "contacts": [
     {
       "icon": "assets/icons/telegram.svg",

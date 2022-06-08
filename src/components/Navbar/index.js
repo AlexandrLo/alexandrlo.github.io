@@ -51,9 +51,9 @@ function Navbar() {
               <VisuallyHidden>Logo</VisuallyHidden>
               <VStack align="start" textAlign="start" spacing={0}>
                 <Heading as="h3" size="h3">
-                  Ломаченко Александр
+                  {portfolioData.navbar.heading}
                 </Heading>
-                <Text>Frontend React Developer</Text>
+                <Text>{portfolioData.navbar.lead}</Text>
               </VStack>
             </HStack>
           </Link>
