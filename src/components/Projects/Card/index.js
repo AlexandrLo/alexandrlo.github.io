@@ -7,15 +7,15 @@ import {
   Button,
   HStack,
   Heading,
-  Image,
   LinkBox,
   LinkOverlay,
   Text,
   VStack,
 } from "@chakra-ui/react";
-
-import StatusIndicator from "./StatusIndicator";
 import { BsBoxArrowUpRight, BsGithub } from "react-icons/bs";
+
+import Image from "components/Image";
+import StatusIndicator from "./StatusIndicator";
 
 Card.propTypes = {
   project: PropTypes.shape({
