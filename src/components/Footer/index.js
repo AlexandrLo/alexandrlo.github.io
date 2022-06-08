@@ -10,7 +10,7 @@ import {
 } from "@chakra-ui/react";
 
 import ColorModeSwitch from "components/ColorModeSwitch";
-import SocialButtons from "components/SocialButtons";
+import ContactsIconButtons from "./ContactsIconButtons";
 
 function Footer() {
   return (
@@ -19,7 +19,7 @@ function Footer() {
         <Container py="2rem" px="1.5rem">
           <VStack spacing="2rem">
             <HStack w="100%">
-              <SocialButtons />
+              <ContactsIconButtons />
               <Text
                 fontSize="0.875rem"
                 color="gray.400"
