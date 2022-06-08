@@ -69,7 +69,7 @@ function Drawer({ isOpen, onClose, btnRef }) {
             >
               © A. Lomachenko 2022
             </Text>
-            <HStack w="100%" justify="end">
+            <HStack w="100%" justify="flex-end">
               <ColorModeSwitch />
             </HStack>
           </HStack>
