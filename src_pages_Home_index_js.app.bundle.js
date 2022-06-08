@@ -1584,9 +1584,6 @@ function WavingHand() {
 
   var wave = function wave() {
     api.start({
-      from: {
-        rotateZ: 0
-      },
       to: [{
         rotateZ: 20
       }, {
