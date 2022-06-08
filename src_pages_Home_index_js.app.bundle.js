@@ -1615,6 +1615,7 @@ function WavingHand() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_3__.Box, {
     ml: "0.5rem",
     display: "inline-block",
+    userSelect: "none",
     onClick: wave
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_react_spring_web__WEBPACK_IMPORTED_MODULE_1__.animated.div, {
     style: _objectSpread({
