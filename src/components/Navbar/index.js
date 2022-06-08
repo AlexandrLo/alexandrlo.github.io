@@ -1,6 +1,6 @@
 import React from "react";
 
-import { BsCloudDownloadFill } from "react-icons/bs";
+import { BsFileEarmarkArrowDownFill } from "react-icons/bs";
 import { Link as RouterLink } from "react-router-dom";
 import {
   Button,
@@ -67,7 +67,7 @@ function Navbar() {
                   variant="alpha"
                   size="lg"
                 >
-                  <BsCloudDownloadFill />
+                  <BsFileEarmarkArrowDownFill size={20} />
                 </Button>
               </Tooltip>
               <Contacts />

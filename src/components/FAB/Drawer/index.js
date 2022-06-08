@@ -1,6 +1,6 @@
 import React from "react";
 
-import { BsCloudDownloadFill } from "react-icons/bs";
+import { BsFileEarmarkArrowDownFill } from "react-icons/bs";
 import PropTypes from "prop-types";
 import SVG from "react-inlinesvg";
 import {
@@ -52,7 +52,7 @@ function Drawer({ isOpen, onClose, btnRef }) {
               variant="alpha"
               size="lg"
               w="100%"
-              leftIcon={<BsCloudDownloadFill />}
+              leftIcon={<BsFileEarmarkArrowDownFill size={20} />}
             >
               Скачать CV
             </Button>
