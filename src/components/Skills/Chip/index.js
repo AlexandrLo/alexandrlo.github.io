@@ -11,6 +11,7 @@ function Chip({ text }) {
       borderRadius="full"
       px={{ base: "0.75rem", md: "1rem" }}
       py={{ base: "0.325rem", md: "0.5rem" }}
+      whiteSpace="nowrap"
     >
       <Text variant="lead">{text}</Text>
     </Box>
