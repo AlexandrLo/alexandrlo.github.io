@@ -63,6 +63,14 @@ const theme = extendTheme({
   },
   radii: {
     base: "0.625rem",
+    none: "0",
+    sm: "0.25rem",
+    md: "0.625rem",
+    lg: "1rem",
+    xl: "2rem",
+    "2xl": "3rem",
+    "3xl": "5rem",
+    full: "9999px",
   },
 });
 

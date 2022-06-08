@@ -33,7 +33,7 @@ function Card({ project }) {
   return (
     <LinkBox
       borderWidth="2px"
-      borderRadius="base"
+      borderRadius="lg"
       overflow="hidden"
       display="flex"
       flexDirection="column"
