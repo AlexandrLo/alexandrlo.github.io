@@ -1,5 +1,5 @@
 "use strict";
-(self["webpackChunkchakra_react_boilerplate"] = self["webpackChunkchakra_react_boilerplate"] || []).push([["src_pages_NotFound_index_js"],{
+(self["webpackChunkalexandrlo_github_io"] = self["webpackChunkalexandrlo_github_io"] || []).push([["src_pages_NotFound_index_js"],{
 
 /***/ "./src/pages/NotFound/index.js":
 /*!*************************************!*\
