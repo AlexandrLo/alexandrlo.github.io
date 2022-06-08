@@ -1175,34 +1175,36 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/color-mode/dist/chakra-ui-color-mode.esm.js");
-/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/layout/dist/chakra-ui-layout.esm.js");
-/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/media-query/dist/chakra-ui-media-query.esm.js");
+/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/color-mode/dist/chakra-ui-color-mode.esm.js");
+/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/layout/dist/chakra-ui-layout.esm.js");
+/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/media-query/dist/chakra-ui-media-query.esm.js");
 /* harmony import */ var assets_illustration_Illustration_dark_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! assets/illustration/Illustration-dark.svg */ "./src/assets/illustration/Illustration-dark.svg");
+/* harmony import */ var assets_json_portfolio_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! assets/json/portfolio.json */ "./src/assets/json/portfolio.json");
+
 
 
 
 
 
 function Hero() {
-  var _useColorMode = (0,_chakra_ui_react__WEBPACK_IMPORTED_MODULE_2__.useColorMode)(),
+  var _useColorMode = (0,_chakra_ui_react__WEBPACK_IMPORTED_MODULE_3__.useColorMode)(),
       colorMode = _useColorMode.colorMode;
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_3__.Container, {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_4__.Container, {
     px: {
       base: "1rem",
       md: "1.5rem"
     },
     py: "4rem"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_3__.HStack, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_4__.HStack, {
     justify: "space-between"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_3__.VStack, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_4__.VStack, {
     align: "start",
     maxW: "30rem",
     spacing: "1rem"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_3__.Heading, null, "\u041F\u0440\u0438\u0432\u0435\u0442! \uD83D\uDC4B"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_3__.Text, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_4__.Heading, null, assets_json_portfolio_json__WEBPACK_IMPORTED_MODULE_2__.hero.heading), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_4__.Text, {
     variant: "lead"
-  }, "\u042F \u2014 frontend \u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u0447\u0438\u043A, \u043A\u043E\u0442\u043E\u0440\u044B\u0439 \u043B\u044E\u0431\u0438\u0442 \u0434\u0435\u043B\u0430\u0442\u044C \u043A\u0440\u0430\u0441\u0438\u0432\u044B\u0435, \u0441\u043E\u0432\u0440\u0435\u043C\u0435\u043D\u043D\u044B\u0435 \u0432\u0435\u0431 \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u044F \u0438 \u0443\u0447\u0438\u0442\u044C\u0441\u044F \u043D\u043E\u0432\u043E\u043C\u0443.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_4__.Show, {
+  }, assets_json_portfolio_json__WEBPACK_IMPORTED_MODULE_2__.hero.lead)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__.Show, {
     above: "md"
   }, colorMode === "light" && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(assets_illustration_Illustration_dark_svg__WEBPACK_IMPORTED_MODULE_1__["default"], null), colorMode === "dark" && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(assets_illustration_Illustration_dark_svg__WEBPACK_IMPORTED_MODULE_1__["default"], null))));
 }
