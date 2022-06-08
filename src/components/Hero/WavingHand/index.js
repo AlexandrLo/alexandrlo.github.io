@@ -39,7 +39,7 @@ function WavingHand() {
   }, []);
 
   return (
-    <Box ml="0.5rem" display="inline-block" onClick={wave}>
+    <Box ml="0.5rem" display="inline-block" userSelect="none" onClick={wave}>
       <animated.div
         style={{
           display: "inline-block",
