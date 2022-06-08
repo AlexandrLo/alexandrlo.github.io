@@ -1339,7 +1339,7 @@ function Card(_ref) {
   var project = _ref.project;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_3__.LinkBox, {
     borderWidth: "2px",
-    borderRadius: "base",
+    borderRadius: "lg",
     overflow: "hidden",
     display: "flex",
     flexDirection: "column"
@@ -1477,7 +1477,8 @@ function Chip(_ref) {
     py: {
       base: "0.325rem",
       md: "0.5rem"
-    }
+    },
+    whiteSpace: "nowrap"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_2__.Text, {
     variant: "lead"
   }, text));
