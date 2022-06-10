@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkalexandrlo_github_io=self.webpackChunkalexandrlo_github_io||[]).push([[65],{65:(e,n,t)=>{t.r(n),t.d(n,{default:()=>u});var a=t(7294),l=t(8527);const u=function(){return a.createElement(l.W2,{maxW:"container.md",py:4},a.createElement(l.gC,null,a.createElement(l.X6,null,"Page not Found")))}}}]);
