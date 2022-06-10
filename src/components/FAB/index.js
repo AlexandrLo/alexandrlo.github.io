@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 
 import { BsList } from "react-icons/bs";
-import { Button, Hide, useDisclosure } from "@chakra-ui/react";
+import { Button, Hide, VisuallyHidden, useDisclosure } from "@chakra-ui/react";
 
 import Drawer from "./Drawer";
 
@@ -24,6 +24,7 @@ function FAB() {
         zIndex={2}
       >
         <BsList size={32} />
+        <VisuallyHidden>Menu</VisuallyHidden>
       </Button>
       <Drawer {...{ isOpen, onClose, btnRef }} />
     </Hide>

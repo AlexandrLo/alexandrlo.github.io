@@ -39,7 +39,11 @@ function Card({ project }) {
       flexDirection="column"
     >
       <AspectRatio ratio={16 / 10}>
-        <Image src={project.image} objectPosition="top" />
+        <Image
+          src={project.image}
+          alt={`${project.name} screenshot`}
+          objectPosition="top"
+        />
       </AspectRatio>
       <VStack
         borderTopWidth="2px"
