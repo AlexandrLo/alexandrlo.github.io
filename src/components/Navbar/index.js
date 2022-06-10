@@ -68,6 +68,7 @@ function Navbar() {
                   size="lg"
                 >
                   <BsFileEarmarkArrowDownFill size={20} />
+                  <VisuallyHidden>Скачать CV</VisuallyHidden>
                 </Button>
               </Tooltip>
               <Contacts />

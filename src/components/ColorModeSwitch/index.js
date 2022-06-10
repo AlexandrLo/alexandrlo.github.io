@@ -9,7 +9,11 @@ function ColorModeSwitch() {
   return (
     <HStack color="gray.400">
       <BsMoonFill size={20} />
-      <Switch onChange={toggleColorMode} isChecked={colorMode === "light"} />
+      <Switch
+        onChange={toggleColorMode}
+        isChecked={colorMode === "light"}
+        aria-label="Color mode switch"
+      />
       <BsSunFill size={20} />
     </HStack>
   );
