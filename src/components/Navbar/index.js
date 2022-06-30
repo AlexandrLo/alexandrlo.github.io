@@ -1,14 +1,14 @@
 import React from "react";
 
 import { BsFileEarmarkArrowDownFill } from "react-icons/bs";
-import { Link as RouterLink } from "react-router-dom";
 import {
+  Badge,
   Button,
   Container,
   HStack,
   Heading,
-  Link,
   Show,
+  Stack,
   Text,
   Tooltip,
   VStack,
@@ -44,19 +44,30 @@ function Navbar() {
       >
         <HStack justify="space-between">
           {/* Left Links */}
-          <Link as={RouterLink} to="/">
-            <HStack spacing="1rem">
-              {colorMode === "light" && <LogoBlack />}
-              {colorMode === "dark" && <LogoWhite />}
-              <VisuallyHidden>Logo</VisuallyHidden>
-              <VStack align="start" textAlign="start" spacing={0}>
-                <Heading as="h3" size="h3">
-                  {portfolioData.navbar.heading}
-                </Heading>
+          <HStack spacing="1rem">
+            {colorMode === "light" && <LogoBlack />}
+            {colorMode === "dark" && <LogoWhite />}
+            <VisuallyHidden>Logo</VisuallyHidden>
+            <VStack align="start" textAlign="start" spacing={0}>
+              <Heading as="h3" size="h3">
+                {portfolioData.navbar.heading}
+              </Heading>
+              <Stack
+                direction={{ base: "column", md: "row" }}
+                alignItems="center"
+              >
                 <Text>{portfolioData.navbar.lead}</Text>
-              </VStack>
-            </HStack>
-          </Link>
+                {portfolioData.navbar.badge.text && (
+                  <Badge
+                    variant="solid"
+                    colorScheme={portfolioData.navbar.badge.color}
+                  >
+                    {portfolioData.navbar.badge.text}
+                  </Badge>
+                )}
+              </Stack>
+            </VStack>
+          </HStack>
           {/* Right Links */}
           <Show above="md">
             <HStack>
