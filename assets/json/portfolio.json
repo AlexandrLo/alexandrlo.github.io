@@ -1,8 +1,12 @@
 {
-  "cv": "https://www.dropbox.com/s/6bsmpeehfu2cbek/CV.pdf?dl=0",
+  "cv": "https://www.dropbox.com/s/cjyquuui6tq8ny1/A_Lomachenko_CV_2.pdf",
   "navbar": {
     "heading": "Ломаченко Александр",
-    "lead": "Frontend React Developer"
+    "lead": "Frontend Developer",
+    "badge": {
+      "color": "green",
+      "text": "В активном поиске"
+    }
   },
   "hero": {
     "heading": "Привет!",
