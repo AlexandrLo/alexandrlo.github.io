@@ -2,14 +2,12 @@ import React, { useContext } from "react";
 
 import { BsFileEarmarkArrowDownFill } from "react-icons/bs";
 import {
-  Badge,
   Button,
   Container,
   HStack,
   Heading,
   Show,
   SkeletonText,
-  Stack,
   Text,
   Tooltip,
   VStack,
@@ -59,20 +57,7 @@ function Navbar() {
                 <Heading as="h3" size="h3">
                   {portfolioData?.navbar.heading}
                 </Heading>
-                <Stack
-                  direction={{ base: "column", md: "row" }}
-                  alignItems="center"
-                >
-                  <Text>{portfolioData?.navbar.lead}</Text>
-                  {portfolioData?.navbar.badge.text && (
-                    <Badge
-                      variant="solid"
-                      colorScheme={portfolioData?.navbar.badge.color}
-                    >
-                      {portfolioData?.navbar.badge.text}
-                    </Badge>
-                  )}
-                </Stack>
+                <Text>{portfolioData?.navbar.lead}</Text>
               </VStack>
             </SkeletonText>
           </HStack>
