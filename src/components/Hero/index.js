@@ -27,7 +27,7 @@ function Hero() {
         <VStack align="start" w="100%" maxW="30rem" spacing="1rem">
           <Heading>
             <Skeleton isLoaded={portfolioData} display="inline-block">
-              {portfolioData?.hero.heading ?? "Heading"}
+              {portfolioData?.greeting ?? "Heading"}
             </Skeleton>
             <WavingHand />
           </Heading>
@@ -38,7 +38,7 @@ function Hero() {
             w="100%"
             isLoaded={portfolioData}
           >
-            <Text variant="lead">{portfolioData?.hero.lead}</Text>
+            <Text variant="lead">{portfolioData?.description}</Text>
           </SkeletonText>
         </VStack>
         <Show above="md">

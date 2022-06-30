@@ -55,9 +55,9 @@ function Navbar() {
             >
               <VStack align="start" spacing={0}>
                 <Heading as="h3" size="h3">
-                  {portfolioData?.navbar.heading}
+                  {portfolioData?.name}
                 </Heading>
-                <Text>{portfolioData?.navbar.lead}</Text>
+                <Text>{portfolioData?.position}</Text>
               </VStack>
             </SkeletonText>
           </HStack>
