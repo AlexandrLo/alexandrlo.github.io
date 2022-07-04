@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import { BsFileEarmarkArrowDownFill } from "react-icons/bs";
 import PropTypes from "prop-types";
@@ -12,14 +12,17 @@ import {
   DrawerFooter,
   DrawerOverlay,
   HStack,
+  Skeleton,
   Text,
   VStack,
 } from "@chakra-ui/react";
 
 import ColorModeSwitch from "components/ColorModeSwitch";
-import portfolioData from "assets/json/portfolio.json";
+import { DataContext } from "components/DataProvider";
 
 function Drawer({ isOpen, onClose, btnRef }) {
+  const { portfolioData } = useContext(DataContext);
+
   return (
     <ChDrawer
       isOpen={isOpen}
@@ -33,42 +36,56 @@ function Drawer({ isOpen, onClose, btnRef }) {
 
         <DrawerBody>
           <VStack spacing="1rem">
-            {portfolioData.contacts.map((contact) => (
-              <Button
-                key={contact.name}
-                as="a"
-                size="lg"
-                w="100%"
-                variant="outline"
-                href={contact.href}
-                leftIcon={<SVG src={contact.icon} fill="currentColor" />}
-              >
-                {contact.name}
-              </Button>
-            ))}
-            <Button
-              as="a"
-              href={portfolioData.cv}
-              variant="alpha"
-              size="lg"
-              w="100%"
-              leftIcon={<BsFileEarmarkArrowDownFill size={20} />}
-            >
-              Скачать CV
-            </Button>
+            {portfolioData ? (
+              <>
+                {portfolioData.contacts.map((contact) => (
+                  <Button
+                    key={contact.name}
+                    as="a"
+                    size="lg"
+                    w="100%"
+                    variant="outline"
+                    href={contact.href}
+                    leftIcon={<SVG src={contact.icon} fill="currentColor" />}
+                  >
+                    {contact.name}
+                  </Button>
+                ))}
+                <Button
+                  as="a"
+                  href={portfolioData.cv}
+                  variant="alpha"
+                  size="lg"
+                  w="100%"
+                  leftIcon={<BsFileEarmarkArrowDownFill size={20} />}
+                >
+                  Скачать CV
+                </Button>
+              </>
+            ) : (
+              <>
+                <Skeleton w="100%" h="3rem" />
+                <Skeleton w="100%" h="3rem" />
+                <Skeleton w="100%" h="3rem" />
+                <Skeleton w="100%" h="3rem" />
+                <Skeleton w="100%" h="3rem" />
+              </>
+            )}
           </VStack>
         </DrawerBody>
 
         <DrawerFooter>
           <HStack w="100%">
-            <Text
-              fontSize="0.875rem"
-              color="gray.400"
-              textAlign="center"
-              whiteSpace="nowrap"
-            >
-              © A. Lomachenko 2022
-            </Text>
+            <Skeleton isLoaded={portfolioData}>
+              <Text
+                fontSize="0.875rem"
+                color="gray.400"
+                textAlign="center"
+                whiteSpace="nowrap"
+              >
+                {portfolioData?.copyright ?? "© Copyright 2022"}
+              </Text>
+            </Skeleton>
             <HStack w="100%" justify="flex-end">
               <ColorModeSwitch />
             </HStack>

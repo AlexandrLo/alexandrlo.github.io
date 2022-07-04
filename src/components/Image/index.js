@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
 import PropTypes from "prop-types";
 import {
@@ -8,9 +8,15 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { animated, config, useTransition } from "@react-spring/web";
+import { getDownloadURL, ref } from "firebase/storage";
 
-function Image({ src, alt, ...rest }) {
+import { DataContext } from "components/DataProvider";
+import { useEffect } from "react";
+
+function Image({ path, alt, ...rest }) {
+  const { storage } = useContext(DataContext);
   const [isLoading, setIsLoading] = useState(true);
+  const [src, setSrc] = useState(null);
 
   const transitions = useTransition(isLoading, {
     from: { opacity: 1 },
@@ -18,6 +24,11 @@ function Image({ src, alt, ...rest }) {
     leave: { opacity: 0 },
     config: config.molasses,
   });
+
+  useEffect(() => {
+    if (storage && path)
+      getDownloadURL(ref(storage, path)).then((url) => setSrc(url));
+  }, [storage, path]);
 
   const start = useColorModeValue("gray.100", "gray.600");
   const end = useColorModeValue("gray.200", "gray.500");
@@ -56,7 +67,7 @@ function Image({ src, alt, ...rest }) {
 }
 
 Image.propTypes = {
-  src: PropTypes.string,
+  path: PropTypes.string,
   alt: PropTypes.string,
 };
 
