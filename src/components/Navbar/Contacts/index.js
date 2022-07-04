@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import SVG from "react-inlinesvg";
@@ -12,9 +12,11 @@ import {
   Text,
 } from "@chakra-ui/react";
 
-import portfolioData from "assets/json/portfolio.json";
+import { DataContext } from "components/DataProvider";
 
 function Contacts() {
+  const { portfolioData } = useContext(DataContext);
+
   return (
     <Menu>
       <MenuButton
@@ -26,7 +28,7 @@ function Contacts() {
         Контакты
       </MenuButton>
       <MenuList>
-        {portfolioData.contacts.map((contact) => (
+        {portfolioData?.contacts.map((contact) => (
           <MenuItem key={contact.name} as="a" href={contact.href}>
             <HStack spacing="1rem">
               <SVG src={contact.icon} fill="currentColor" />

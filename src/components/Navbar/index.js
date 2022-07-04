@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import { BsFileEarmarkArrowDownFill } from "react-icons/bs";
 import {
@@ -7,6 +7,7 @@ import {
   HStack,
   Heading,
   Show,
+  SkeletonText,
   Text,
   Tooltip,
   VStack,
@@ -17,11 +18,12 @@ import {
 } from "@chakra-ui/react";
 
 import Contacts from "./Contacts";
+import { DataContext } from "components/DataProvider";
 import LogoBlack from "assets/logo/logo-black.svg";
 import LogoWhite from "assets/logo/logo-white.svg";
-import portfolioData from "assets/json/portfolio.json";
 
 function Navbar() {
+  const { portfolioData } = useContext(DataContext);
   const { colorMode } = useColorMode();
   const bg = useColorModeValue("whiteAlpha.800", "blackAlpha.800");
 
@@ -38,20 +40,26 @@ function Navbar() {
       <Container
         py={{ base: "1rem", md: "1.5rem" }}
         px={{ base: "1rem", md: "1.5rem" }}
-        align="center"
       >
         <HStack justify="space-between">
           {/* Left Links */}
           <HStack spacing="1rem">
             {colorMode === "light" && <LogoBlack />}
             {colorMode === "dark" && <LogoWhite />}
-            <VisuallyHidden>Logo</VisuallyHidden>
-            <VStack align="start" textAlign="start" spacing={0}>
-              <Heading as="h3" size="h3">
-                {portfolioData.navbar.heading}
-              </Heading>
-              <Text>{portfolioData.navbar.lead}</Text>
-            </VStack>
+            <SkeletonText
+              isLoaded={portfolioData}
+              noOfLines={2}
+              skeletonHeight="1.25rem"
+              spacing="0.875rem"
+              minW="12rem"
+            >
+              <VStack align="start" spacing={0}>
+                <Heading as="h3" size="h3">
+                  {portfolioData?.name}
+                </Heading>
+                <Text>{portfolioData?.position}</Text>
+              </VStack>
+            </SkeletonText>
           </HStack>
           {/* Right Links */}
           <Show above="md">
@@ -59,7 +67,7 @@ function Navbar() {
               <Tooltip label="Скачать CV" hasArrow>
                 <Button
                   as="a"
-                  href={portfolioData.cv}
+                  href={portfolioData?.cv}
                   variant="alpha"
                   size="lg"
                 >

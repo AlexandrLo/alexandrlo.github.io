@@ -1,7 +1,7 @@
-import React, { lazy } from "react";
+import React from "react";
 
-const Home = lazy(() => import("pages/Home"));
-const NotFound = lazy(() => import("pages/NotFound"));
+import Home from "pages/Home";
+import NotFound from "pages/NotFound";
 
 const routes = [
   {

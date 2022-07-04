@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import { Container, Heading, SimpleGrid, chakra } from "@chakra-ui/react";
 
-import Card from "./Card";
-import portfolioData from "assets/json/portfolio.json";
+import { DataContext } from "components/DataProvider";
+import ProjectCard from "./ProjectCard";
+import SkeletonCard from "./SkeletonCard";
 
 function Projects() {
+  const { portfolioData } = useContext(DataContext);
+
   return (
     <chakra.section>
       <Container px={{ base: "1rem", md: "1.5rem" }} py="2rem">
@@ -13,9 +16,18 @@ function Projects() {
           Проекты
         </Heading>
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing="1rem">
-          {portfolioData.projects.map((project) => (
-            <Card key={project.name} project={project} />
-          ))}
+          {portfolioData ? (
+            portfolioData?.projects.map((project) => (
+              <ProjectCard key={project.name} project={project} />
+            ))
+          ) : (
+            <>
+              <SkeletonCard />
+              <SkeletonCard />
+              <SkeletonCard />
+              <SkeletonCard />
+            </>
+          )}
         </SimpleGrid>
       </Container>
     </chakra.section>
