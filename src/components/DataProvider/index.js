@@ -27,7 +27,7 @@ export const DataProvider = ({ children }) => {
 
   useEffect(() => {
     if (db) {
-      const rootRef = ref(db, "/");
+      const rootRef = ref(db, "/public");
       onValue(rootRef, (snapshot) => {
         setPortfolioData(snapshot.val());
       });
