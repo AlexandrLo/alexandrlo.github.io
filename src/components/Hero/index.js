@@ -28,8 +28,8 @@ function Hero() {
           <Heading>
             <Skeleton isLoaded={portfolioData} display="inline-block">
               {portfolioData?.greeting ?? "Heading"}
+              <WavingHand />
             </Skeleton>
-            <WavingHand />
           </Heading>
           <SkeletonText
             skeletonHeight={"1.5rem"}
