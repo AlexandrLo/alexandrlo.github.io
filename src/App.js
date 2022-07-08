@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React from "react";
 
 import { Flex } from "@chakra-ui/react";
 import { Route, Routes } from "react-router-dom";
