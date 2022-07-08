@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 
-import { BsFileEarmarkArrowDownFill } from "react-icons/bs";
 import PropTypes from "prop-types";
 import SVG from "react-inlinesvg";
 import {
@@ -19,6 +18,7 @@ import {
 
 import ColorModeSwitch from "components/ColorModeSwitch";
 import { DataContext } from "components/DataProvider";
+import DownloadCVButton from "components/DownloadCVButton";
 
 function Drawer({ isOpen, onClose, btnRef }) {
   const { portfolioData } = useContext(DataContext);
@@ -51,16 +51,7 @@ function Drawer({ isOpen, onClose, btnRef }) {
                     {contact.name}
                   </Button>
                 ))}
-                <Button
-                  as="a"
-                  href={portfolioData.cv}
-                  variant="alpha"
-                  size="lg"
-                  w="100%"
-                  leftIcon={<BsFileEarmarkArrowDownFill size={20} />}
-                >
-                  Скачать CV
-                </Button>
+                <DownloadCVButton />
               </>
             ) : (
               <>

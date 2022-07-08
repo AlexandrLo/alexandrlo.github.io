@@ -15,7 +15,7 @@ import {
 
 import Contacts from "./Contacts";
 import { DataContext } from "components/DataProvider";
-import DownloadCVButton from "./DownloadCVButton";
+import DownloadCVButton from "components/DownloadCVButton";
 import LogoBlack from "assets/logo/logo-black.svg";
 import LogoWhite from "assets/logo/logo-white.svg";
 
@@ -61,7 +61,7 @@ function Navbar() {
           {/* Buttons */}
           <Show above="md">
             <HStack>
-              <DownloadCVButton />
+              <DownloadCVButton compact />
               <Contacts />
             </HStack>
           </Show>
