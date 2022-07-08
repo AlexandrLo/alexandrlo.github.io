@@ -1,17 +1,13 @@
 import React, { useContext } from "react";
 
-import { BsFileEarmarkArrowDownFill } from "react-icons/bs";
 import {
-  Button,
   Container,
   HStack,
   Heading,
   Show,
   SkeletonText,
   Text,
-  Tooltip,
   VStack,
-  VisuallyHidden,
   chakra,
   useColorMode,
   useColorModeValue,
@@ -19,6 +15,7 @@ import {
 
 import Contacts from "./Contacts";
 import { DataContext } from "components/DataProvider";
+import DownloadCVButton from "./DownloadCVButton";
 import LogoBlack from "assets/logo/logo-black.svg";
 import LogoWhite from "assets/logo/logo-white.svg";
 
@@ -42,7 +39,7 @@ function Navbar() {
         px={{ base: "1rem", md: "1.5rem" }}
       >
         <HStack justify="space-between">
-          {/* Left Links */}
+          {/* Logo & Heading */}
           <HStack spacing="1rem">
             {colorMode === "light" && <LogoBlack />}
             {colorMode === "dark" && <LogoWhite />}
@@ -61,20 +58,10 @@ function Navbar() {
               </VStack>
             </SkeletonText>
           </HStack>
-          {/* Right Links */}
+          {/* Buttons */}
           <Show above="md">
             <HStack>
-              <Tooltip label="Скачать CV" hasArrow>
-                <Button
-                  as="a"
-                  href={portfolioData?.cv}
-                  variant="alpha"
-                  size="lg"
-                >
-                  <BsFileEarmarkArrowDownFill size={20} />
-                  <VisuallyHidden>Скачать CV</VisuallyHidden>
-                </Button>
-              </Tooltip>
+              <DownloadCVButton />
               <Contacts />
             </HStack>
           </Show>
