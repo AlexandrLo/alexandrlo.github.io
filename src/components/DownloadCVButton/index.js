@@ -16,35 +16,43 @@ function DownloadCVButton({ compact = false }) {
   const [cvUrl, setCvUrl] = useState(null);
 
   useEffect(() => {
-    if (storage && portfolioData?.cvPath)
+    if (storage && portfolioData?.cvPath) {
       getDownloadURL(ref(storage, portfolioData.cvPath)).then((url) =>
         setCvUrl(url),
       );
+    } else if (storage && !portfolioData?.cvPath) {
+      setCvUrl(null);
+    }
   }, [storage, portfolioData]);
 
-  if (compact) {
-    return (
-      <Tooltip label="Скачать CV" hasArrow>
-        <Button as="a" href={cvUrl} variant="alpha" size="lg">
-          <BsFileEarmarkArrowDownFill size={20} />
-          <VisuallyHidden>Скачать CV</VisuallyHidden>
-        </Button>
-      </Tooltip>
-    );
-  } else {
-    return (
+  return compact ? (
+    <Tooltip label="Скачать CV" hasArrow isDisabled={!portfolioData?.cvPath}>
       <Button
         as="a"
         href={cvUrl}
         variant="alpha"
         size="lg"
-        w="100%"
-        leftIcon={<BsFileEarmarkArrowDownFill size={20} />}
+        opacity={portfolioData?.cvPath ? 1 : 0}
+        transitionProperty="opacity"
       >
-        Скачать CV
+        <BsFileEarmarkArrowDownFill size={20} />
+        <VisuallyHidden>Скачать CV</VisuallyHidden>
       </Button>
-    );
-  }
+    </Tooltip>
+  ) : (
+    <Button
+      as="a"
+      href={cvUrl}
+      variant="alpha"
+      size="lg"
+      w="100%"
+      leftIcon={<BsFileEarmarkArrowDownFill size={20} />}
+      opacity={portfolioData?.cvPath ? 1 : 0}
+      transitionProperty="opacity"
+    >
+      Скачать CV
+    </Button>
+  );
 }
 
 export default DownloadCVButton;
