@@ -3,7 +3,7 @@
   "homepage": "https://github.com/AlexandrLo/alexandrlo.github.io",
   "version": "1.0.0",
   "scripts": {
-    "start": "webpack serve --open --config webpack.dev.js",
+    "dev": "webpack serve --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "lint": "eslint --ext .jsx,.js src/"
   },
